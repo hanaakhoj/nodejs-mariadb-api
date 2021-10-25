@@ -1,7 +1,7 @@
 /**
  * delete action
  * see {@link module:routes/teams/_id/}
- * @module controllers/teams/_id/delete.js
+ * @module controllers/teams/_id/delete
  */
 const { Team } = require('../../../models')
 const { param, validationResult } = require('express-validator')

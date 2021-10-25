@@ -1,7 +1,7 @@
 /**
  * update team instance action controller
  * see {@link module:routes/teams/_id}
- * @module controllers/teams/_id/update.js
+ * @module controllers/teams/_id/update
  */
 
 const { param, query, validationResult } = require('express-validator')
@@ -9,12 +9,12 @@ const { Team } = require('../../../models')
 const createUpdateObject = require('../../../helpers/createUpdateObject')
 
 /**
- * Action to update an attribute of a Team instance
- * @param {Integer} simulationId the id of the team to be updated
- * @param {String} attribute the attribute that will be update
+ * Action to update a team instance
+ * @param {Number} teamId the id of the instance to be updated
+ * @param {String} attribute the attribute that will be updated
  * @param {String} value the value to update in the attribute
  *
- * @returns {Object} returns the updated instance object
+ * @returns {res} status 200 if the action succeeded
  */
 module.exports = [
   param('id').not().isEmpty().isInt().toInt(),
