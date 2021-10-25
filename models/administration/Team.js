@@ -2,11 +2,11 @@ module.exports = (sequelize, DataTypes) => {
   const Team = sequelize.define(
     'Team',
     {
-      description: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      name: DataTypes.TEXT,
+      description: DataTypes.TEXT,
     },
     {
       schema: 'administration',
