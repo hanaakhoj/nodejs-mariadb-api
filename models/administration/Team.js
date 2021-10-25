@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.TEXT,
     },
     {
-      schema: 'administration',
       freezeTableName: true,
       indexes: [
         {
@@ -19,6 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       ],
     }
   )
-  //   Team.associate = function (models) {}
+  Team.associate = function (models) {
+    Team.hasMany(models.Employee, { foreignKey: 'teamId' })
+  }
   return Team
 }

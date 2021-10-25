@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const Team = sequelize.define(
-    'Team',
+  const Employee = sequelize.define(
+    'Employee',
     {
       id: {
         type: DataTypes.UUID,
@@ -31,16 +31,19 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      schema: 'administration',
       freezeTableName: true,
       indexes: [
         {
           unique: true,
-          fields: ['name', 'id'],
+          fields: ['id', 'email'],
         },
       ],
     }
   )
-  //   Employee.associate = function (models) {}
-  return Team
+  Employee.associate = function (models) {
+    Employee.belongsTo(models.Team, {
+      foreignKey: 'teamId',
+    })
+  }
+  return Employee
 }
