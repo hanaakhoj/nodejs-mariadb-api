@@ -29,15 +29,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false,
       },
+      teamId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Team', // Can be both a string representing the table name or a Sequelize model
+          key: 'id',
+        },
+      },
     },
     {
       freezeTableName: true,
-      indexes: [
-        {
-          unique: true,
-          fields: ['id', 'email'],
-        },
-      ],
     }
   )
   Employee.associate = function (models) {
