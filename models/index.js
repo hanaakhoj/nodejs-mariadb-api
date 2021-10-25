@@ -48,7 +48,7 @@ function importModels(pathDir) {
           sequelize,
           Sequelize
         )
-        require(path.join(pathDir, dirent.name))(Sequelize)
+        require(path.join(pathDir, dirent.name))(sequelize, Sequelize)
         db[model.name] = model
       }
     }
