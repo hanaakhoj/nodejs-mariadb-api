@@ -10,13 +10,13 @@ const deleteAction = require('../../../controllers/teams/_id/delete')
 module.exports = (router) => {
   /**
    * @type {put}
-   * @name /api/teams/get
+   * @name /api/teams/:id/update
    * see {@link module:controllers/teams/_id/update}
    */
   router.put('/api/teams/:id/update', update)
   /**
    * @type {delete}
-   * @name /api/teams/get
+   * @name /api/teams/:id/delete
    * see {@link module:controllers/teams/_id/delete}
    */
   router.delete('/api/teams/:id/delete', deleteAction)
