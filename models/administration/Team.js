@@ -5,17 +5,12 @@ module.exports = (sequelize, DataTypes) => {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       description: DataTypes.TEXT,
     },
     {
       freezeTableName: true,
-      indexes: [
-        {
-          unique: true,
-          fields: ['name', 'id'],
-        },
-      ],
     }
   )
   Team.associate = function (models) {
