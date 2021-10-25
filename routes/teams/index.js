@@ -12,6 +12,6 @@ module.exports = (router) => {
    * @name /api/teams
    * see {@link module:controllers/teams/get}
    */
-  router.get('/api/teams', get)
+  router.get('/api/teams/get', get)
   return router
 }
