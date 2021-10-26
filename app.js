@@ -19,7 +19,7 @@ const app = express()
 app.use(helmet())
 
 const corsOptions = {
-  origin: new RegExp(process.env.MAYOTTE_BAIGNOIRE_API_HOST),
+  origin: new RegExp(process.env.API_HOST),
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   credentials: true,
 }
@@ -33,7 +33,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
-app.use(bodyParser.json({ limit: '500kb' }))
+app.use(bodyParser.json({}))
 
 // Set up Session Connect
 if (process.env.NODE_ENV !== 'production') {
